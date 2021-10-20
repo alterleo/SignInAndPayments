@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		FA52B9DB27201B7300261F8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52B9DA27201B7300261F8E /* AppDelegate.swift */; };
 		FA52B9DD27201B7300261F8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52B9DC27201B7300261F8E /* SceneDelegate.swift */; };
-		FA52B9DF27201B7300261F8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52B9DE27201B7300261F8E /* ViewController.swift */; };
-		FA52B9E227201B7300261F8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA52B9E027201B7300261F8E /* Main.storyboard */; };
 		FA52B9E427201B7B00261F8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA52B9E327201B7B00261F8E /* Assets.xcassets */; };
 		FA52B9E727201B7B00261F8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA52B9E527201B7B00261F8E /* LaunchScreen.storyboard */; };
+		FA52B9F227201BEF00261F8E /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52B9F127201BEF00261F8E /* SigninViewController.swift */; };
+		FA52B9F527201D8D00261F8E /* SigninPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52B9F427201D8D00261F8E /* SigninPresenter.swift */; };
+		FA52B9F727201E3B00261F8E /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52B9F627201E3B00261F8E /* SigninView.swift */; };
+		FA52B9FB27202F4400261F8E /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52B9FA27202F4400261F8E /* PaymentsViewController.swift */; };
+		FA52B9FD2720387500261F8E /* PaymentsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52B9FC2720387500261F8E /* PaymentsPresenter.swift */; };
+		FA52B9FF272038D700261F8E /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52B9FE272038D700261F8E /* Payment.swift */; };
+		FA52BA0127203E8600261F8E /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52BA0027203E8600261F8E /* PaymentCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FA52B9D727201B7300261F8E /* SignInAndPayments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignInAndPayments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA52B9DA27201B7300261F8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA52B9DC27201B7300261F8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FA52B9DE27201B7300261F8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FA52B9E127201B7300261F8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA52B9E327201B7B00261F8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA52B9E627201B7B00261F8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA52B9E827201B7B00261F8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA52B9F127201BEF00261F8E /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
+		FA52B9F427201D8D00261F8E /* SigninPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninPresenter.swift; sourceTree = "<group>"; };
+		FA52B9F627201E3B00261F8E /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
+		FA52B9FA27202F4400261F8E /* PaymentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsViewController.swift; sourceTree = "<group>"; };
+		FA52B9FC2720387500261F8E /* PaymentsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsPresenter.swift; sourceTree = "<group>"; };
+		FA52B9FE272038D700261F8E /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		FA52BA0027203E8600261F8E /* PaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,44 @@
 		FA52B9D927201B7300261F8E /* SignInAndPayments */ = {
 			isa = PBXGroup;
 			children = (
-				FA52B9DA27201B7300261F8E /* AppDelegate.swift */,
-				FA52B9DC27201B7300261F8E /* SceneDelegate.swift */,
-				FA52B9DE27201B7300261F8E /* ViewController.swift */,
-				FA52B9E027201B7300261F8E /* Main.storyboard */,
-				FA52B9E327201B7B00261F8E /* Assets.xcassets */,
-				FA52B9E527201B7B00261F8E /* LaunchScreen.storyboard */,
+				FA52B9EE27201B9000261F8E /* Signin */,
+				FA52B9EF27201B9900261F8E /* Payments */,
+				FA52B9F327201C3A00261F8E /* ProjectFiles */,
 				FA52B9E827201B7B00261F8E /* Info.plist */,
 			);
 			path = SignInAndPayments;
+			sourceTree = "<group>";
+		};
+		FA52B9EE27201B9000261F8E /* Signin */ = {
+			isa = PBXGroup;
+			children = (
+				FA52B9F127201BEF00261F8E /* SigninViewController.swift */,
+				FA52B9F627201E3B00261F8E /* SigninView.swift */,
+				FA52B9F427201D8D00261F8E /* SigninPresenter.swift */,
+			);
+			path = Signin;
+			sourceTree = "<group>";
+		};
+		FA52B9EF27201B9900261F8E /* Payments */ = {
+			isa = PBXGroup;
+			children = (
+				FA52B9FA27202F4400261F8E /* PaymentsViewController.swift */,
+				FA52BA0027203E8600261F8E /* PaymentCell.swift */,
+				FA52B9FE272038D700261F8E /* Payment.swift */,
+				FA52B9FC2720387500261F8E /* PaymentsPresenter.swift */,
+			);
+			path = Payments;
+			sourceTree = "<group>";
+		};
+		FA52B9F327201C3A00261F8E /* ProjectFiles */ = {
+			isa = PBXGroup;
+			children = (
+				FA52B9DA27201B7300261F8E /* AppDelegate.swift */,
+				FA52B9DC27201B7300261F8E /* SceneDelegate.swift */,
+				FA52B9E327201B7B00261F8E /* Assets.xcassets */,
+				FA52B9E527201B7B00261F8E /* LaunchScreen.storyboard */,
+			);
+			path = ProjectFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +166,6 @@
 			files = (
 				FA52B9E727201B7B00261F8E /* LaunchScreen.storyboard in Resources */,
 				FA52B9E427201B7B00261F8E /* Assets.xcassets in Resources */,
-				FA52B9E227201B7300261F8E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +176,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA52B9DF27201B7300261F8E /* ViewController.swift in Sources */,
+				FA52B9F527201D8D00261F8E /* SigninPresenter.swift in Sources */,
+				FA52B9FD2720387500261F8E /* PaymentsPresenter.swift in Sources */,
+				FA52B9F227201BEF00261F8E /* SigninViewController.swift in Sources */,
+				FA52B9F727201E3B00261F8E /* SigninView.swift in Sources */,
+				FA52B9FB27202F4400261F8E /* PaymentsViewController.swift in Sources */,
 				FA52B9DB27201B7300261F8E /* AppDelegate.swift in Sources */,
+				FA52BA0127203E8600261F8E /* PaymentCell.swift in Sources */,
+				FA52B9FF272038D700261F8E /* Payment.swift in Sources */,
 				FA52B9DD27201B7300261F8E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +191,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FA52B9E027201B7300261F8E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA52B9E127201B7300261F8E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FA52B9E527201B7B00261F8E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,7 +330,7 @@
 				INFOPLIST_FILE = SignInAndPayments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -306,7 +342,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -322,7 +358,7 @@
 				INFOPLIST_FILE = SignInAndPayments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -334,7 +370,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
