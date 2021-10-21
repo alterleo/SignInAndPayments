@@ -65,6 +65,7 @@ class SigninView: UIView {
         NSLayoutConstraint.activate([
             label.topAnchor.constraint(equalTo: self.topAnchor, constant: 220),
             label.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            label.heightAnchor.constraint(equalToConstant: 40),
             
             loginTF.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 100),
             loginTF.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
@@ -75,7 +76,7 @@ class SigninView: UIView {
             passwordTF.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
             
             button.topAnchor.constraint(equalTo: passwordTF.bottomAnchor, constant: 80),
-            button.bottomAnchor.constraint(lessThanOrEqualTo: self.bottomAnchor, constant: -292),
+            button.bottomAnchor.constraint(greaterThanOrEqualTo: self.bottomAnchor, constant: -292),
             button.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ])
     }

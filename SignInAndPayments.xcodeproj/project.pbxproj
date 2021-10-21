@@ -18,6 +18,8 @@
 		FA52B9FD2720387500261F8E /* PaymentsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52B9FC2720387500261F8E /* PaymentsPresenter.swift */; };
 		FA52B9FF272038D700261F8E /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52B9FE272038D700261F8E /* Payment.swift */; };
 		FA52BA0127203E8600261F8E /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52BA0027203E8600261F8E /* PaymentCell.swift */; };
+		FA52BA0427206AD500261F8E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52BA0327206AD500261F8E /* Network.swift */; };
+		FA52BA062721A38800261F8E /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52BA052721A38700261F8E /* UserSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		FA52B9FC2720387500261F8E /* PaymentsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsPresenter.swift; sourceTree = "<group>"; };
 		FA52B9FE272038D700261F8E /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		FA52BA0027203E8600261F8E /* PaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
+		FA52BA0327206AD500261F8E /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		FA52BA052721A38700261F8E /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 		FA52B9D927201B7300261F8E /* SignInAndPayments */ = {
 			isa = PBXGroup;
 			children = (
+				FA52BA0227206AC400261F8E /* Service */,
 				FA52B9EE27201B9000261F8E /* Signin */,
 				FA52B9EF27201B9900261F8E /* Payments */,
 				FA52B9F327201C3A00261F8E /* ProjectFiles */,
@@ -104,6 +109,15 @@
 				FA52B9E527201B7B00261F8E /* LaunchScreen.storyboard */,
 			);
 			path = ProjectFiles;
+			sourceTree = "<group>";
+		};
+		FA52BA0227206AC400261F8E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FA52BA0327206AD500261F8E /* Network.swift */,
+				FA52BA052721A38700261F8E /* UserSettings.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA52BA0427206AD500261F8E /* Network.swift in Sources */,
 				FA52B9F527201D8D00261F8E /* SigninPresenter.swift in Sources */,
 				FA52B9FD2720387500261F8E /* PaymentsPresenter.swift in Sources */,
 				FA52B9F227201BEF00261F8E /* SigninViewController.swift in Sources */,
@@ -185,6 +200,7 @@
 				FA52BA0127203E8600261F8E /* PaymentCell.swift in Sources */,
 				FA52B9FF272038D700261F8E /* Payment.swift in Sources */,
 				FA52B9DD27201B7300261F8E /* SceneDelegate.swift in Sources */,
+				FA52BA062721A38800261F8E /* UserSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,8 +16,16 @@ class PaymentCell: UITableViewCell {
         label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
     }()
-    let descriptionLabel = UILabel()
-    let operationDate = UILabel()
+    let descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 2
+        return label
+    }()
+    let operationDate: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .right
+        return label
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -35,13 +43,13 @@ class PaymentCell: UITableViewCell {
             amountAndCurrency.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             amountAndCurrency.trailingAnchor.constraint(equalTo: operationDate.leadingAnchor, constant: -10),
             
-            operationDate.widthAnchor.constraint(equalToConstant: 130),
+            operationDate.widthAnchor.constraint(equalToConstant: 160),
             operationDate.centerYAnchor.constraint(equalTo: amountAndCurrency.centerYAnchor),
             operationDate.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             
-            descriptionLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -14),
+            descriptionLabel.topAnchor.constraint(equalTo: amountAndCurrency.bottomAnchor, constant: 2),
             descriptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            descriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+            descriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
         ])
     }
     
@@ -52,7 +60,7 @@ class PaymentCell: UITableViewCell {
     func configure(payment: Payment) {
         amountAndCurrency.text = String(payment.amount) + " " + (payment.currency ?? "")
         descriptionLabel.text = payment.description
-        operationDate.text = "20 october 2021"
+        operationDate.text = payment.created
     }
     
 }

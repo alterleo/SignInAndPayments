@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct Payment {
+// Модель для отображения
+struct Payment: Decodable {
     let description: String
-    let amount: Double
+    let amount: String
     let currency: String?
-    let created: Date?
+    let created: String?
 }

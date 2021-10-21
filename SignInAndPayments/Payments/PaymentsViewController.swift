@@ -7,13 +7,14 @@
 
 import UIKit
 
-protocol PaymentsVCProtocol {
+protocol PaymentsVCProtocol: AnyObject {
     func reloadView()
 }
 
 class PaymentsViewController: UIViewController {
     
     private lazy var presenter = PaymentsPresenter(view: self)
+    var token: String?
     
     let tableView: UITableView = {
         let table = UITableView()
@@ -25,7 +26,10 @@ class PaymentsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        presenter.fetchPayments()
+        
+        if let token = token {
+            presenter.fetchPayments(with: token)
+        }
     }
     
     func setupView() {
@@ -33,7 +37,7 @@ class PaymentsViewController: UIViewController {
         navigationItem.setHidesBackButton(true, animated: true)
         navigationItem.title = "Payments"
         let button = UIBarButtonItem(title: "logout", style: .plain, target: self, action: #selector(logoutButton))
-        button.tintColor = .gray
+        button.tintColor = .red
         navigationItem.rightBarButtonItem = button
         
         view.addSubview(tableView)
@@ -48,15 +52,18 @@ class PaymentsViewController: UIViewController {
     }
     
     @objc func logoutButton(sender: UIButton) {
-        print(#function)
-        navigationController?.popViewController(animated: true)
+        presenter.logout() {
+            navigationController?.popViewController(animated: false)
+        }
     }
 }
 
 // MARK: PaymentsVCProtocol
 extension PaymentsViewController: PaymentsVCProtocol {
     func reloadView() {
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -74,6 +81,6 @@ extension PaymentsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 90
     }
 }

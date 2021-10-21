@@ -8,7 +8,7 @@
 import Foundation
 
 class PaymentsPresenter {
-    var view: PaymentsVCProtocol?
+    weak var view: PaymentsVCProtocol?
     
     var payments = [Payment]()
     
@@ -16,18 +16,55 @@ class PaymentsPresenter {
         self.view = view
     }
     
-    func fetchPayments() {
-        payments.append(Payment(description: "Operation description-1", amount: 11.6, currency: "BTC", created: Date()))
-        payments.append(Payment(description: "Operation description-2", amount: 1100000000.000006, currency: "ETH", created: Date()))
-        payments.append(Payment(description: "Operation description-3", amount: 11.6, currency: "LTC", created: Date()))
-        payments.append(Payment(description: "Operation description-4", amount: 11.6, currency: "SXRP", created: Date()))
-        payments.append(Payment(description: "Operation description-5", amount: 11.6, currency: "TRON", created: Date()))
-        payments.append(Payment(description: "Operation description-6", amount: 1200000.006, currency: "USDT", created: Date()))
-        payments.append(Payment(description: "Operation description-7", amount: 11.6, currency: "BTC", created: Date()))
-        payments.append(Payment(description: "Operation description-8", amount: 11.6, currency: "LTC", created: Date()))
-        payments.append(Payment(description: "Operation description-9", amount: 11.6, currency: "USDT", created: Date()))
-        payments.append(Payment(description: "Operation description-10", amount: 11.6, currency: "SXRP", created: Date()))
+    /// Clear token in UserDeafults
+    func logout(completion: () -> ()) {
+        UserSettings.token = ""
+        completion()
+    }
+    
+    /// Fetch payments using network
+    func fetchPayments(with token: String) {
         
-        view?.reloadView()
+        Network.share.fetchPayments(with: token) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let paymentResponse):
+                self.makeDesiredFormat(with: paymentResponse)
+            case .failure(let error):
+                print(error)
+            }
+            
+            self.view?.reloadView()
+        }
+    }
+    
+    /// Приводим полученный массив к подходящему виду для отображения
+    private func makeDesiredFormat(with paymentResponse: [PaymentResponse]) {
+        self.payments = paymentResponse.map { payment in
+            
+            var dateString: String?
+            
+            if payment.created > 0 {
+                let date = Date(timeIntervalSince1970: TimeInterval(payment.created))
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+                dateString = dateFormatter.string(from: date)
+            }
+            
+            var amountString = ""
+            
+            switch payment.amount {
+            case Amount.double(let amount):
+                amountString = String(amount)
+            case Amount.string(let amount):
+                amountString = String(amount)
+            }
+            
+            return Payment(description: payment.desc,
+                           amount: amountString,
+                           currency: payment.currency,
+                           created: dateString)
+        }
     }
 }
